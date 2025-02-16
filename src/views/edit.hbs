@@ -1,0 +1,80 @@
+
+        <!-- In case of error, you should display div with class "errorContainer" -->
+        <!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
+
+        <!-- <div>
+            <div class="errorContainer">
+                <p>Error</p>
+            </div>
+        </div> -->
+{{#if error}}
+<div>
+    <div class="errorContainer">
+        <p>{{error}}</p>
+    </div>
+</div>
+<section id="create-container">
+    <div class="create-container-info">
+        <h1>Edit Event</h1>
+        <form method="post">
+            <label>Name of the Disaster:</label>
+            <input type="text" id="name" name="name" placeholder="..." value="{{data.name}}">
+            <label>Type of Disaster:</label>
+            <select id="type" name="type">
+                {{#each types}}
+                    <option value="{{value}}" {{selected}}>{{label}}</option>
+                {{/each}}
+                {{!-- <option value="Wildfire">Wildfire</option>
+                <option value="Flood">Flood</option>
+                <option value="Earthquake" selected >Earthquake</option>
+                <option value="Hurricane">Hurricane</option>
+                <option value="Drought">Drought</option>
+                <option value="Tsunami">Tsunami</option>
+                <option value="Other">Other</option> --}}
+            </select>
+            <label>Year of the Event:</label>
+            <input type="number" id="elevations" name="year" placeholder="..." value="{{data.year}}">
+            <label>Location:</label>
+            <input type="text" id="location" name="location" placeholder="..." value="{{data.location}}">
+            <label>Image:</label>
+            <input type="text" id="image" name="image" placeholder="http://..." value="{{data.image}}">
+            <label>Description:</label>
+            <textarea id="description" name="description" placeholder="...">{{data.description}}</textarea>
+            <input type="submit" id="btn" value="Submit"></input>
+        </form>
+    </div>
+</section>
+{{else}}
+<section id="create-container">
+    <div class="create-container-info">
+        <h1>Edit Event</h1>
+        <form method="post">
+            <label>Name of the Disaster:</label>
+            <input type="text" id="name" name="name" placeholder="..." value="{{disaster.name}}">
+            <label>Type of Disaster:</label>
+            <select id="type" name="type">
+                {{#each types}}
+                    <option value="{{value}}" {{selected}}>{{label}}</option>
+                {{/each}}
+                {{!-- <option value="Wildfire">Wildfire</option>
+                <option value="Flood">Flood</option>
+                <option value="Earthquake" selected >Earthquake</option>
+                <option value="Hurricane">Hurricane</option>
+                <option value="Drought">Drought</option>
+                <option value="Tsunami">Tsunami</option>
+                <option value="Other">Other</option> --}}
+            </select>
+            <label>Year of the Event:</label>
+            <input type="number" id="elevations" name="year" placeholder="..." value="{{disaster.year}}">
+            <label>Location:</label>
+            <input type="text" id="location" name="location" placeholder="..." value="{{disaster.location}}">
+            <label>Image:</label>
+            <input type="text" id="image" name="image" placeholder="http://..." value="{{disaster.image}}">
+            <label>Description:</label>
+            <textarea id="description" name="description" placeholder="...">{{disaster.description}}</textarea>
+            <input type="submit" id="btn" value="Submit"></input>
+        </form>
+    </div>
+</section>
+{{/if}}
+

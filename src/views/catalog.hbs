@@ -1,0 +1,51 @@
+
+
+<!-- In case of error, you should display div with class "errorContainer" -->
+<!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
+
+<!-- <div>
+    <div class="errorContainer">
+        <p>Error</p>
+    </div>
+</div> -->
+
+<section class="catalog">
+    <h1 id="title"><span>Power of Nature</span></h1>
+    <div class="item-list">
+        {{#if disasters}}
+        {{#each disasters}}
+        <div class="event">
+            <div class="img">
+                <img src="{{image}}">
+            </div>
+            <div class="event-info">
+                <h1>{{name}}</h1>
+                <p><span>Location: </span>{{location}}</p>
+                <p><span>Type: </span>{{type}}</p>
+            </div>
+
+            <a href="/disasters/{{id}}/details" class="btn-details">Details</a>
+        </div>
+        {{/each}}
+        {{else}}
+        <div class="no-event">
+            <p>There are no events found yet!</p>
+        </div>
+        {{/if}}
+        {{!-- <div class="event">
+            <div class="img">
+                <img
+                    src="https://static.scientificamerican.com/sciam/cache/file/2AE37833-55E8-4973-85CFC20E82A23A45_source.jpg">
+            </div>
+            <div class="event-info">
+                <h1>Haiti Earthquake</h1>
+                <p><span>Location: </span>Haiti</p>
+                <p><span>Type: </span>Earthquake</p>
+            </div>
+
+            <a href="#" class="btn-details">Details</a>
+        </div> --}}
+
+    </div>
+    <!--  -->
+</section>
